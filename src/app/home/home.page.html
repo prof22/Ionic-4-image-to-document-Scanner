@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title style="text-align: center">
+      Document Scanner
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="bg">
+  <!-- <ng-progress [min]="0" [max]="1"></ng-progress> -->
+  <ion-button color="medium" expand="full" (click)="selectSource()" style="font-family: Arial, Helvetica, sans-serif"> Select Image</ion-button>
+  <img [src] ="selectedImage" *ngIf="selectedImage">
+  <ion-button color="tertiary"  expand="full" (click)="recognizeImage()" [disabled]="!selectedImage">  Recognize Image</ion-button>
+  <ion-card *ngIf="!imageText" class="bg-xontent">
+    <ion-card-header></ion-card-header>
+    <ion-card-content>
+   <p style="text-align: center; font-weight: bolder">Kindly be Patient as first Use Does take time to complete.. </p> 
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="imageText">
+    <ion-card-header></ion-card-header>
+    <ion-card-content>
+     <ion-item>
+     <ion-label position="floating">Text From Image</ion-label>
+       <ion-textarea> {{ imageText }}</ion-textarea>
+     </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "NewBlankTemplate",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
